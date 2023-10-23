@@ -1,0 +1,37 @@
+site_name: Local Documentation
+site_url: https://maconrad.github.io/docs/
+site_description: Finally trying to write some Documentation
+site_author: Mario Conrad
+
+repo_url: https://github.com/maconrad/docs
+edit_uri: blob/main/docs/
+
+theme:
+  name: material
+  locale: en
+  features:
+    - content.code.copy
+    - content.code.select
+
+nav:
+  - Home: index.md
+  - About: about_me.md
+  - Automation:
+      - CI/CD Pipelines: automation/cicd/cicd_intro.md
+  - Python:
+      - Environment & Co: 
+          - venv: python/env/venv.md
+          - pyenv: python/env/pyenvs.md
+      - Python Verisons:
+          - Version 3.9: python/version/py_v309.md
+          - Version 3.10: python/version/py_v310.md       
+                  
+
+markdown_extensions:
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
