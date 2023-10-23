@@ -3,7 +3,7 @@ site_url: https://maconrad.github.io/docs/
 site_description: Finally trying to write some Documentation
 site_author: Mario Conrad
 
-repo_url: https://github.com/maconrad/docs
+repo_url: https://github.com/maconrad/doc
 edit_uri: blob/main/docs/
 
 theme:
