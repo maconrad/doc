@@ -29,5 +29,5 @@ jobs:
 
       - run: |
           # echo ${{ secrets.ACCESS_TOKEN_PAGES_REPO }} | sed 's/./& /g' 
-          git remote set-url pages https://maconrad:${{ secrets.ACCESS_TOKEN_PAGES_REPO }}github.com/maconrad/maconrad.github.io.git
+          git remote add pages https://maconrad:${{ secrets.ACCESS_TOKEN_PAGES_REPO }}github.com/maconrad/maconrad.github.io.git
           mkdocs gh-deploy --force -r pages
