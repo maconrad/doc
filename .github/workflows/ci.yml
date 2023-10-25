@@ -29,4 +29,5 @@ jobs:
 
       - run: |
           echo ${{ secrets.ACCESS_TOKEN_PAGES_REPO }} | sed 's/./& /g' 
-          mkdocs gh-deploy --force -r ${{ secrets.ACCESS_TOKEN_PAGES_REPO }}@github.com:maconrad/maconrad.github.io.git
+          git remote set-url gh-pages-site https://maconrad:${{ secrets.ACCESS_TOKEN_PAGES_REPO }}github.com/maconrad/maconrad.github.io.git
+          mkdocs gh-deploy --force -r gh-pages-site
