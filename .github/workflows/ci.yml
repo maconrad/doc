@@ -30,7 +30,7 @@ jobs:
       - run: pip install mkdocs-material 
       - run: mkdocs build
 
-      - name: call the other repos
+      - name: call the other repo
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN_PAGES_REPO }}
           EVENT: TRIGGER_CI
