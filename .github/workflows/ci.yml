@@ -17,8 +17,8 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
+      
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-
 
       - uses: actions/cache@v3
         with:
@@ -26,11 +26,13 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
+      
       - run: pip install mkdocs-material 
-
 
       - run: git config user.name 'maconrad'
       - run: git remote add pages https://maconrad:${{ secrets.ACCESS_TOKEN_PAGES_REPO }}@github.com/maconrad/maconrad.github.io.git
+      - run: git remote -v
+      - run: git config --global --list
 
       - run: |
           # echo ${{ secrets.ACCESS_TOKEN_PAGES_REPO }} | sed 's/./& /g' 
