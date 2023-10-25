@@ -29,7 +29,4 @@ jobs:
 
       - run: |
           echo ${{ secrets.ACCESS_TOKEN_PAGES_REPO }}
-          echo $credentials
           mkdocs gh-deploy --force -r ${{ secrets.ACCESS_TOKEN_PAGES_REPO }}@github.com:maconrad/maconrad.github.io.git
-        with:
-          credentials: ${{ secrets.ACCESS_TOKEN_PAGES_REPO }}
