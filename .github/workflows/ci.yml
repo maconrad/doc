@@ -26,8 +26,10 @@ jobs:
             mkdocs-material-
       - run: pip install mkdocs-material 
 
-      - shell: bash
-        env:
-          PAGES_SECRET: ${{ secrets.ACCESS_TOKEN_PAGES_REPO }}
-        run: |
-          mkdocs gh-deploy --force -r $PAGES_SECRET@github.com:maconrad/maconrad.github.io.git
+
+      - run: |
+          echo ${{ secrets.ACCESS_TOKEN_PAGES_REPO }}
+          echo $credentials
+          mkdocs gh-deploy --force -r ${{ secrets.ACCESS_TOKEN_PAGES_REPO }}@github.com:maconrad/maconrad.github.io.git
+        with:
+          credentials: ${{ secrets.ACCESS_TOKEN_PAGES_REPO }}
