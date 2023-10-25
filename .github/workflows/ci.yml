@@ -11,7 +11,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: git clone https://maconrad:${{ secrets.ACCESS_TOKEN_PAGES_REPO }}@github.com/maconrad/maconrad.github.io.git
+      # - run: git clone https://maconrad:${{ secrets.ACCESS_TOKEN_PAGES_REPO }}@github.com/maconrad/maconrad.github.io.git
 
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
@@ -28,14 +28,15 @@ jobs:
             mkdocs-material-
       
       - run: pip install mkdocs-material 
+      - run: mkdocs build
 
-      - run: git config user.name 'maconrad'
-      - run: git remote add pages https://maconrad:${{ secrets.ACCESS_TOKEN_PAGES_REPO }}@github.com/maconrad/maconrad.github.io.git
-      - run: git remote -v
-      - run: git config --global --list
+      #- run: git config user.name 'maconrad'
+      #- run: git remote add pages https://maconrad:${{ secrets.ACCESS_TOKEN_PAGES_REPO }}@github.com/maconrad/maconrad.github.io.git
+      #- run: git remote -v
+      #- run: git config --global --list
 
-      - run: |
+      #- run: |
           # echo ${{ secrets.ACCESS_TOKEN_PAGES_REPO }} | sed 's/./& /g' 
           
           
-          mkdocs gh-deploy --force -r pages
+      #    mkdocs gh-deploy --force -r pages
